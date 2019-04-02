@@ -1,6 +1,5 @@
 //Dijkstra Implementation, O(ElogV)
 //Ayush Jain
-//Corrections Required
 #include <stdio.h>
 #include <stdlib.h>
 #include <bits/stdc++.h>
@@ -21,7 +20,6 @@ public:
 };
 
 int v;
-
 void dijkstra(vector<vector<int>>&, vector<vector<int>>&, vertex*, int);
 
 int main(void){
@@ -76,6 +74,7 @@ void dijkstra(vector<vector<int>>&adj, vector<vector<int>>&w, vertex* Vert, int 
             V = adj[U][i];
             if(Vert[U].d == INT_MAX)
                 continue;
+            //printf("\n%d %d %d %d %d",U,V,Vert[U].d,Vert[V].d,w[U][i]);
             if( Vert[V].d > (Vert[U].d + w[U][i]) ){
                 Vert[V].d = Vert[U].d + w[U][i];
                 Vert[V].pred = U;
